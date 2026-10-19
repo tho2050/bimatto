@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Món Quà 20/10 Siêu Cưng Dành Cho Em 💖</title>
+  
+  <meta name="description" content="Món quà 20/10 chibi siêu dễ thương và ngọt ngào gửi riêng cho cô gái bé nhỏ của anh! 🐾🌸">
+  <meta property="og:title" content="Món Quà 20/10 Dành Riêng Cho Em 💖">
+  <meta property="og:description" content="Bé ơi, có một chú mèo chibi ôm bó hoa khổng lồ đang đợi bé mở quà nè! 🌷✨">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ffb3c6">
+
+  <!-- Google Fonts: Mali (cute handwriting), Quicksand, Baloo 2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mali:ital,wght@0,500;0,600;0,700;1,600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #ff5e84;
+      --primary-light: #ff8ca3;
+      --primary-soft: #ffe4ec;
+      --accent: #ffd166;
+      --peach: #ff9aa2;
+      --mint: #b5ead7;
+      --bg1: #fff0f5;
+      --bg2: #ffe2eb;
+      --bg-gradient: radial-gradient(circle at 50% 30%, #fffbfd 0%, #ffedf3 45%, #ffd6e4 100%);
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: #ffd1df;
+      --card-shadow: 0 16px 45px rgba(255, 94, 132, 0.22);
+      --key-bg: #ffffff;
+      --text-main: #592437;
+      --text-muted: #96536b;
+      --cat-white: #ffffff;
+      --cat-pink: #ffb8ca;
+      font-family: 'Baloo 2', 'Mali', 'Quicksand', system-ui, sans-serif;
+    }
+
+    [data-theme="night"] {
+      --primary: #ff7597;
+      --primary-light: #ff9eb5;
+      --primary-soft: #4a2133;
+      --bg-gradient: radial-gradient(circle at 50% 30%, #2f1523 0%, #1e0c16 55%, #13050d 100%);
+      --card-bg: rgba(46, 20, 33, 0.94);
+      --card-border: #733650;
+      --card-shadow: 0 18px 50px rgba(0, 0, 0, 0.6);
+      --key-bg: #401a2c;
+      --text-main: #ffe6ef;
+      --text-muted: #d49db2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      transition: background 0.6s ease, color 0.4s ease;
+    }
+
+    /* Floating bubbles & hearts canvas */
+    #fx-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Top Action Bar */
+    .top-controls {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--card-border);
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(255, 94, 132, 0.18);
+      transition: transform 0.2s cubic-bezier(0.3, 1.4, 0.5, 1);
+    }
+
+    .icon-btn:hover {
+      transform: scale(1.1) rotate(6deg);
+    }
+
+    .icon-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* Music Player Pill (Cute Cat Headphones Style) */
+    .music-pill {
+      position: fixed;
+      left: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 2px solid var(--card-border);
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 6px 20px rgba(255, 94, 132, 0.22);
+      cursor: pointer;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.25s cubic-bezier(0.3, 1.3, 0.5, 1);
+    }
+
+    .music-pill:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .music-cat-icon {
+      font-size: 1.25rem;
+      animation: catWiggle 2s infinite ease-in-out;
+    }
+
+    .playing .music-cat-icon {
+      animation: catDance 0.6s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes catWiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      75% { transform: rotate(10deg); }
+    }
+
+    @keyframes catDance {
+      0% { transform: translateY(0) rotate(-12deg); }
+      100% { transform: translateY(-4px) rotate(12deg); }
+    }
+
+    /* Floating customizer button */
+    .customizer-pill {
+      position: fixed;
+      right: 16px;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--card-border);
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+
+    .customizer-pill:hover {
+      color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    /* SCENE MANAGER */
+    .scene {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      padding: 20px;
+      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.3, 1), transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+
+    .scene.off {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.9) translateY(24px);
+    }
+
+    /* ========================================================
+       SCENE 1: CUTE CHIBI LOCK SCREEN (MÈO MOCHI GIỮ MẬT MÃ)
+       ======================================================== */
+    .chibi-lock-card {
+      width: min(340px, 92vw);
+      background: var(--card-bg);
+      border: 3px solid var(--card-border);
+      border-radius: 36px;
+      padding: 16px 22px 24px;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      animation: popCard 0.7s cubic-bezier(0.2, 1.3, 0.4, 1);
+    }
+
+    @keyframes popCard {
+      0% { opacity: 0; transform: scale(0.6) translateY(40px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Peeking Chibi Mochi Cat on top of card */
+    .chibi-avatar-wrap {
+      width: 110px;
+      height: 95px;
+      margin: -50px auto 4px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .chibi-avatar-wrap:hover {
+      transform: scale(1.1);
+    }
+
+    .chibi-avatar-wrap svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      filter: drop-shadow(0 6px 12px rgba(255, 94, 132, 0.25));
+    }
+
+    .cat-ear-left { transform-origin: 26px 30px; animation: earTwitch 3s infinite; }
+    .cat-ear-right { transform-origin: 74px 30px; animation: earTwitch 3.2s infinite reverse; }
+
+    @keyframes earTwitch {
+      0%, 90%, 100% { transform: rotate(0deg); }
+      93% { transform: rotate(-8deg); }
+      96% { transform: rotate(8deg); }
+    }
+
+    .lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .lock-sub {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    /* Paw code indicators */
+    .paw-dots {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .paw-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary-soft);
+      border: 2px dashed var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: transparent;
+      transition: all 0.25s cubic-bezier(0.3, 1.5, 0.5, 1);
+    }
+
+    .paw-dot.active {
+      background: var(--primary);
+      border: 2px solid #fff;
+      color: #fff;
+      transform: scale(1.22) rotate(10deg);
+      box-shadow: 0 4px 12px rgba(255, 94, 132, 0.5);
+    }
+
+    /* Squishy Keypad */
+    .squishy-keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .squishy-btn {
+      height: 54px;
+      border-radius: 20px;
+      border: 2px solid var(--card-border);
+      background: var(--key-bg);
+      color: var(--text-main);
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), inset 0 -3px 0 rgba(0, 0, 0, 0.06);
+      transition: all 0.12s cubic-bezier(0.2, 0.9, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .squishy-btn:active {
+      transform: translateY(3px) scale(0.94);
+      background: var(--primary-light);
+      color: #fff;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .squishy-btn.del {
+      color: #ff3366;
+      font-size: 1.3rem;
+    }
+
+    .squishy-btn.gap {
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .shake-card {
+      animation: cuteShake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+
+    @keyframes cuteShake {
+      15%, 85% { transform: translate3d(-6px, 0, 0) rotate(-2deg); }
+      30%, 70% { transform: translate3d(6px, 0, 0) rotate(2deg); }
+      45%, 60% { transform: translate3d(-8px, 0, 0) rotate(-1deg); }
+    }
+
+    .hint-tag {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ========================================================
+       SCENE 2: CHIBI MOCHI CAT HOLDING GIANT BOUQUET
+       (HOẠT ẢNH MÈO ÔM BÓ HOA KHỔNG LỒ)
+       ======================================================== */
+    .chibi-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 440px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Speech Bubble over Chibi */
+    .chibi-speech {
+      background: #ffffff;
+      border: 3px solid var(--primary-light);
+      border-radius: 22px;
+      padding: 10px 20px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary);
+      box-shadow: 0 8px 24px rgba(255, 94, 132, 0.25);
+      position: relative;
+      margin-bottom: 8px;
+      animation: floatBubble 2.8s ease-in-out infinite;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chibi-speech::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #ffffff transparent;
+      display: block;
+      width: 0;
+    }
+
+    .chibi-speech::before {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 12px 12px 0;
+      border-style: solid;
+      border-color: var(--primary-light) transparent;
+      display: block;
+      width: 0;
+    }
+
+    @keyframes floatBubble {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Interactive Big Chibi Character Container */
+    .chibi-hero-wrap {
+      width: min(360px, 86vw);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.3, 1.4, 0.5, 1);
+    }
+
+    .chibi-hero-wrap:hover {
+      transform: scale(1.04);
+    }
+
+    .chibi-hero-wrap:active {
+      transform: scale(0.96);
+    }
+
+    .chibi-hero-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 30px rgba(255, 94, 132, 0.28));
+    }
+
+    /* Natural idle breathing & flower swaying */
+    #chibi-cat-group {
+      animation: catIdle 3.8s ease-in-out infinite;
+      transform-origin: 200px 350px;
+    }
+
+    #giant-bouquet-group {
+      animation: bouquetSway 4.2s ease-in-out infinite;
+      transform-origin: 200px 300px;
+    }
+
+    @keyframes catIdle {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1.2deg); }
+    }
+
+    @keyframes bouquetSway {
+      0%, 100% { transform: rotate(-2.5deg); }
+      50% { transform: rotate(2.5deg); }
+    }
+
+    /* Party excitement dance */
+    .party-active #chibi-cat-group {
+      animation: catPartyDance 0.8s ease-in-out infinite alternate !important;
+    }
+
+    @keyframes catPartyDance {
+      0% { transform: translateY(0) rotate(-4deg) scale(1); }
+      100% { transform: translateY(-14px) rotate(4deg) scale(1.04); }
+    }
+
+    /* Floating Tap Hint Pill */
+    .tap-gift-pill {
+      margin-top: 14px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 3px solid var(--primary);
+      box-shadow: 0 8px 24px rgba(255, 94, 132, 0.35);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      animation: pulseGlow 1.8s infinite ease-in-out;
+      transition: transform 0.2s;
+    }
+
+    .tap-gift-pill:hover {
+      transform: scale(1.06);
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: translateY(0); box-shadow: 0 8px 24px rgba(255, 94, 132, 0.3); }
+      50% { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(255, 94, 132, 0.55); }
+    }
+
+    /* ========================================================
+       SCENE 3: LOVE LETTER MODAL (BỨC THƯ TÌNH CẢM & QUÀ TẶNG)
+       ======================================================== */
+    .modal-backdrop {
+      background: rgba(40, 12, 24, 0.65);
+      backdrop-filter: blur(10px);
+      z-index: 50;
+      overflow-y: auto;
+      padding: 24px 16px;
+    }
+
+    .letter-envelope {
+      width: min(460px, 94vw);
+      background: #ffffff;
+      border: 4px solid var(--card-border);
+      border-radius: 32px;
+      box-shadow: 0 25px 65px rgba(0, 0, 0, 0.3);
+      padding: 28px 24px 22px;
+      position: relative;
+      animation: letterBounceIn 0.6s cubic-bezier(0.18, 1.3, 0.4, 1);
+      margin: auto;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    @keyframes letterBounceIn {
+      0% { opacity: 0; transform: scale(0.65) translateY(40px) rotate(-4deg); }
+      100% { opacity: 1; transform: scale(1) translateY(0) rotate(0); }
+    }
+
+    .letter-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .letter-tag {
+      background: linear-gradient(135deg, #ff5e84, #ff8ca3);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 12px rgba(255, 94, 132, 0.35);
+    }
+
+    .letter-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .letter-content {
+      font-family: 'Mali', cursive;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #552233;
+      text-align: left;
+      white-space: pre-wrap;
+      margin-bottom: 22px;
+      min-height: 130px;
+    }
+
+    .typing-paw::after {
+      content: " 🐾";
+      display: inline-block;
+      animation: pawPulse 0.6s infinite alternate;
+    }
+
+    @keyframes pawPulse {
+      0% { opacity: 0.3; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+
+    /* Cute Chibi Illustrated Polaroids */
+    .memories-box {
+      margin: 18px 0 22px;
+      padding-top: 14px;
+      border-top: 2px dashed var(--primary-soft);
+    }
+
+    .memories-heading {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    .polaroids-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 8px 4px 14px;
+      scrollbar-width: none;
+    }
+
+    .polaroids-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .polaroid-card {
+      flex: 0 0 132px;
+      background: #ffffff;
+      border-radius: 14px;
+      border: 2px solid #ffe2ec;
+      padding: 8px 8px 10px;
+      box-shadow: 0 8px 18px rgba(255, 94, 132, 0.15);
+      transform: rotate(var(--rot, 0deg));
+      transition: all 0.2s cubic-bezier(0.3, 1.3, 0.5, 1);
+      cursor: pointer;
+    }
+
+    .polaroid-card:hover {
+      transform: scale(1.1) rotate(0deg) !important;
+      box-shadow: 0 14px 28px rgba(255, 94, 132, 0.32);
+      z-index: 5;
+    }
+
+    .polaroid-pic-frame {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 10px;
+      background: #fff5f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 6px;
+      overflow: hidden;
+    }
+
+    .polaroid-pic-frame svg {
+      width: 90%;
+      height: 90%;
+    }
+
+    .polaroid-label {
+      font-family: 'Mali', cursive;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: #662233;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    /* Cute Response Buttons for Girlfriend */
+    .reply-area {
+      background: #fff5f8;
+      border-radius: 20px;
+      padding: 14px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 2px solid #ffd6e4;
+    }
+
+    .reply-area-title {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .reply-buttons-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+
+    .cute-reply-btn {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--primary-light);
+      background: #ffffff;
+      color: var(--text-main);
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s cubic-bezier(0.3, 1.4, 0.5, 1);
+    }
+
+    .cute-reply-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 16px rgba(255, 94, 132, 0.35);
+    }
+
+    .cute-reply-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Action Button */
+    .btn-chibi-close {
+      display: block;
+      margin: 0 auto;
+      padding: 12px 34px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #ff5e84, #ff8ca3);
+      color: #fff;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(255, 94, 132, 0.4);
+      transition: all 0.2s;
+    }
+
+    .btn-chibi-close:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 12px 28px rgba(255, 94, 132, 0.55);
+    }
+
+    .btn-chibi-close:active {
+      transform: scale(0.96);
+    }
+
+    /* Floating Stickers (Chibi Mochi Kittens dancing around) */
+    .kawaii-floating-sticker {
+      position: fixed;
+      z-index: 20;
+      width: 68px;
+      padding: 6px;
+      border-radius: 14px;
+      background: #ffffff;
+      border: 2px solid var(--card-border);
+      box-shadow: 0 8px 22px rgba(255, 94, 132, 0.25);
+      pointer-events: none;
+      animation: floatSticker 4.2s ease-in-out forwards;
+    }
+
+    .kawaii-floating-sticker svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes floatSticker {
+      0% { opacity: 0; transform: scale(0.2) rotate(var(--r0, 0deg)); }
+      15% { opacity: 1; transform: scale(1.15) rotate(var(--r1, 10deg)); }
+      25% { transform: scale(1) rotate(var(--r1, 10deg)); }
+      85% { opacity: 1; transform: translateY(-45px) rotate(var(--r0, -5deg)); }
+      100% { opacity: 0; transform: translateY(-70px) scale(0.85) rotate(var(--r0, -5deg)); }
+    }
+
+    /* Sweet Toast Notification */
+    .kawaii-toast {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-25px);
+      z-index: 200;
+      background: #ffffff;
+      border: 3px solid var(--primary);
+      border-radius: 999px;
+      padding: 10px 24px;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--primary);
+      box-shadow: 0 10px 30px rgba(255, 94, 132, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.35s cubic-bezier(0.2, 1.3, 0.4, 1);
+    }
+
+    .kawaii-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Customizer Modal */
+    .customizer-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(10px);
+      z-index: 150;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .customizer-modal.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .customizer-card {
+      width: min(440px, 92vw);
+      background: #ffffff;
+      border-radius: 30px;
+      border: 3px solid var(--card-border);
+      box-shadow: var(--card-shadow);
+      padding: 24px 22px;
+      color: var(--text-main);
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+
+    .customizer-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .input-group {
+      margin-bottom: 12px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .input-group input, .input-group textarea {
+      width: 100%;
+      border-radius: 14px;
+      border: 2px solid #ffd1df;
+      background: #fff8fa;
+      padding: 10px 14px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      outline: none;
+      font-weight: 600;
+    }
+
+    .input-group input:focus, .input-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 94, 132, 0.2);
+    }
+
+    .share-link-box {
+      margin-top: 14px;
+      padding: 10px;
+      background: #fff5f8;
+      border-radius: 12px;
+      border: 2px dashed var(--primary);
+      font-size: 0.8rem;
+      word-break: break-all;
+      user-select: all;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Background Canvas: Bubbles, Strawberries & Hearts -->
+  <canvas id="fx-canvas"></canvas>
+
+  <!-- Top Right Controls -->
+  <div class="top-controls">
+    <button class="icon-btn" id="theme-toggle" aria-label="Đổi sáng tối" title="Đổi ngày / đêm">
+      🌙
+    </button>
+  </div>
+
+  <!-- Music Pill Control -->
+  <div class="music-pill" id="music-pill">
+    <span class="music-cat-icon">🎧</span>
+    <span id="music-text">Bật Nhạc 20/10 🎵</span>
+  </div>
+
+  <!-- Customizer Floating Button -->
+  <div class="customizer-pill" id="customizer-trigger" title="Tùy chỉnh lời chúc & lấy link">
+    <span>✏️ Tùy chỉnh link</span>
+  </div>
+
+  <!-- ========================================================
+       SCENE 1: CHIBI LOCK SCREEN
+       ======================================================== -->
+  <section class="scene" id="scene-lock">
+    <div class="chibi-lock-card" id="chibi-lock-card">
+      
+      <!-- Peeking Chibi Mochi Cat SVG -->
+      <div class="chibi-avatar-wrap" id="chibi-peeker" title="Bé mèo đang giữ bí mật nè!">
+        <svg viewBox="0 0 100 85">
+          <!-- Left Ear -->
+          <g class="cat-ear-left">
+            <polygon points="18,32 30,6 44,28" fill="#ffffff" stroke="#ff8ca3" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="22,28 30,12 38,26" fill="#ffb8ca"/>
+          </g>
+          <!-- Right Ear -->
+          <g class="cat-ear-right">
+            <polygon points="56,28 70,6 82,32" fill="#ffffff" stroke="#ff8ca3" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="62,26 70,12 78,28" fill="#ffb8ca"/>
+          </g>
+          <!-- Head / Face -->
+          <ellipse cx="50" cy="50" rx="42" ry="32" fill="#ffffff" stroke="#ff8ca3" stroke-width="3"/>
+          <!-- Blush Cheeks -->
+          <ellipse cx="24" cy="56" rx="7" ry="4.5" fill="#ff99b3" opacity="0.8"/>
+          <ellipse cx="76" cy="56" rx="7" ry="4.5" fill="#ff99b3" opacity="0.8"/>
+          <!-- Sparkly Boba Anime Eyes -->
+          <ellipse cx="34" cy="48" rx="6" ry="7.5" fill="#381b25"/>
+          <ellipse cx="66" cy="48" rx="6" ry="7.5" fill="#381b25"/>
+          <circle cx="32" cy="45" r="2.5" fill="#ffffff"/>
+          <circle cx="64" cy="45" r="2.5" fill="#ffffff"/>
+          <circle cx="36" cy="51" r="1.2" fill="#ffffff"/>
+          <circle cx="68" cy="51" r="1.2" fill="#ffffff"/>
+          <!-- Tiny Cute Cat Mouth (3 shape) -->
+          <path d="M46 54 Q48 57 50 54 Q52 57 54 54" stroke="#381b25" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- Cute Paws peeking over edge -->
+          <ellipse cx="28" cy="78" rx="8" ry="6" fill="#ffffff" stroke="#ff8ca3" stroke-width="2.5"/>
+          <ellipse cx="72" cy="78" rx="8" ry="6" fill="#ffffff" stroke="#ff8ca3" stroke-width="2.5"/>
+        </svg>
+      </div>
+
+      <h2 class="lock-title">Nhập pass nha bé ơi 🐾</h2>
+      <p class="lock-sub">Mở khóa để nhận món quà 20/10 siêu to khổng lồ 🎁</p>
+
+      <!-- 4 Paw Code Dots -->
+      <div class="paw-dots" id="paw-dots">
+        <div class="paw-dot">🐾</div>
+        <div class="paw-dot">🐾</div>
+        <div class="paw-dot">🐾</div>
+        <div class="paw-dot">🐾</div>
+      </div>
+
+      <!-- Squishy 3x4 Keypad -->
+      <div class="squishy-keypad" id="squishy-keypad">
+        <!-- Generated by JavaScript -->
+      </div>
+
+      <div class="hint-tag">💡 Gợi ý: Ngày kỷ niệm hoặc 2010 nè ~</div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SCENE 2: CHIBI CAT HOLDING GIANT FLOWER BOUQUET
+       ======================================================== -->
+  <section class="scene off" id="scene-stage">
+    <div class="chibi-stage">
+      
+      <!-- Speech bubble from Chibi -->
+      <div class="chibi-speech" id="chibi-speech">
+        <span>🌸</span> <span id="speech-text">Anh mang hoa đến tặng bé 20/10 nè! Chạm vào bó hoa nhé!</span>
+      </div>
+
+      <!-- Hero Chibi Cat Holding Giant Bouquet -->
+      <div class="chibi-hero-wrap" id="chibi-hero" aria-label="Bé mèo ôm bó hoa khổng lồ">
+        <svg class="chibi-hero-svg" viewBox="0 0 400 480">
+          
+          <!-- Sparkles & Hearts around Chibi -->
+          <g>
+            <circle cx="60" cy="120" r="4" fill="#ffd166">
+              <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="340" cy="140" r="5" fill="#ff7597">
+              <animate attributeName="opacity" values="1;0.3;1" dur="2.2s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M70 190 Q65 175 80 180 Q95 175 90 190 L80 205 Z" fill="#ff4d79" opacity="0.8">
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite"/>
+            </path>
+            <path d="M320 220 Q315 205 330 210 Q345 205 340 220 L330 235 Z" fill="#ff4d79" opacity="0.8">
+              <animateTransform attributeName="transform" type="translate" values="0,0; 0,-18; 0,0" dur="3.5s" repeatCount="indefinite"/>
+            </path>
+          </g>
+
+          <!-- CHIBI CAT BODY GROUP -->
+          <g id="chibi-cat-group">
+            <!-- Cat Tail wagging -->
+            <path d="M120 380 Q70 360 80 320 Q95 310 100 335 Q105 370 135 385 Z" fill="#ffffff" stroke="#ff8ca3" stroke-width="3">
+              <animateTransform attributeName="transform" type="rotate" values="-8 120 380; 12 120 380; -8 120 380" dur="2.5s" repeatCount="indefinite"/>
+            </path>
+
+            <!-- Cat Body (Plump round marshmallow body) -->
+            <ellipse cx="200" cy="360" rx="82" ry="75" fill="#ffffff" stroke="#ff8ca3" stroke-width="3.5"/>
+            <!-- Cat Feet -->
+            <ellipse cx="160" cy="425" rx="20" ry="14" fill="#ffffff" stroke="#ff8ca3" stroke-width="3"/>
+            <ellipse cx="240" cy="425" rx="20" ry="14" fill="#ffffff" stroke="#ff8ca3" stroke-width="3"/>
+
+            <!-- Cat Ears with Pink Inner -->
+            <!-- Left Ear -->
+            <polygon points="120,240 145,170 180,225" fill="#ffffff" stroke="#ff8ca3" stroke-width="3.5" stroke-linejoin="round"/>
+            <polygon points="130,230 145,185 170,220" fill="#ffb8ca"/>
+            <!-- Right Ear -->
+            <polygon points="220,225 255,170 280,240" fill="#ffffff" stroke="#ff8ca3" stroke-width="3.5" stroke-linejoin="round"/>
+            <polygon points="230,220 255,185 270,230" fill="#ffb8ca"/>
+
+            <!-- Cat Head -->
+            <ellipse cx="200" cy="245" rx="72" ry="58" fill="#ffffff" stroke="#ff8ca3" stroke-width="3.5"/>
+
+            <!-- Big Anime Boba Eyes (Happy Blinking) -->
+            <g id="cat-eyes">
+              <!-- Left Eye -->
+              <ellipse cx="170" cy="242" rx="9.5" ry="12" fill="#381b25"/>
+              <circle cx="167" cy="238" r="4" fill="#ffffff"/>
+              <circle cx="173" cy="247" r="2" fill="#ffffff"/>
+              <!-- Right Eye -->
+              <ellipse cx="230" cy="242" rx="9.5" ry="12" fill="#381b25"/>
+              <circle cx="227" cy="238" r="4" fill="#ffffff"/>
+              <circle cx="233" cy="247" r="2" fill="#ffffff"/>
+            </g>
+
+            <!-- Rosy Cheeks -->
+            <ellipse cx="148" cy="256" rx="12" ry="8" fill="#ff8aa6" opacity="0.85"/>
+            <ellipse cx="252" cy="256" rx="12" ry="8" fill="#ff8aa6" opacity="0.85"/>
+
+            <!-- Cat Cute Smile -->
+            <path d="M193 254 Q196 260 200 255 Q204 260 207 254" stroke="#381b25" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+          </g>
+
+          <!-- GIANT FLOWER BOUQUET HELD IN FRONT -->
+          <g id="giant-bouquet-group">
+            
+            <!-- White/Pastel Luxury Wrapping Paper -->
+            <path d="M110 320 L290 320 L260 440 L140 440 Z" fill="#ffffff" stroke="#ffd1df" stroke-width="3.5" filter="drop-shadow(0 6px 12px rgba(255,94,132,0.18))"/>
+            <path d="M135 325 L150 435 M175 325 L180 435 M225 325 L220 435 M265 325 L250 435" stroke="#ffe2eb" stroke-width="2.5"/>
+
+            <!-- Giant Bouquet Greenery & Foliage -->
+            <path d="M200 320 C100 250 50 180 40 100 C110 150 170 230 200 320 Z" fill="#69b872"/>
+            <path d="M200 320 C300 250 350 180 360 100 C290 150 230 230 200 320 Z" fill="#52a35b"/>
+            <path d="M200 320 C130 270 80 200 80 120 C140 170 180 240 200 320 Z" fill="#80cf89" opacity="0.9"/>
+            <path d="M200 320 C270 270 320 200 320 120 C260 170 220 240 200 320 Z" fill="#5db066" opacity="0.9"/>
+
+            <!-- Tulips & Velvet Blooming Roses -->
+            <!-- Flower 1: Top Center Coral Rose -->
+            <g transform="translate(200, 95) scale(1.3)" filter="drop-shadow(0 4px 10px rgba(255,45,96,0.3))">
+              <circle cx="0" cy="0" r="22" fill="#ff4d79"/>
+              <path d="M-14 -6 C-10 -18 10 -18 14 -6 C18 6 10 14 0 16 C-10 14 -18 6 -14 -6 Z" fill="#ff2458"/>
+              <path d="M-6 -2 C-3 -10 3 -10 6 -2 C8 4 4 8 0 9 C-4 8 -8 4 -6 -2 Z" fill="#ffffff" opacity="0.4"/>
+            </g>
+
+            <!-- Flower 2: Left Pink Tulip -->
+            <g transform="translate(130, 130) rotate(-22) scale(1.15)">
+              <path d="M-22 0 C-28 -32 -16 -50 -10 -64 C-4 -52 0 -48 0 -42 C0 -48 4 -52 10 -64 C16 -50 28 -32 22 0 Z" fill="#ff7597"/>
+              <path d="M-22 0 C-26 -28 -12 -46 0 -54 C2 -34 -2 -12 6 6 C-4 8 -14 6 -22 0 Z" fill="#ff9eb5"/>
+              <path d="M22 0 C26 -28 12 -46 0 -54 C-2 -34 2 -12 -6 6 C4 8 14 6 22 0 Z" fill="#ff527b"/>
+            </g>
+
+            <!-- Flower 3: Right Pink Tulip -->
+            <g transform="translate(270, 130) rotate(22) scale(1.15)">
+              <path d="M-22 0 C-28 -32 -16 -50 -10 -64 C-4 -52 0 -48 0 -42 C0 -48 4 -52 10 -64 C16 -50 28 -32 22 0 Z" fill="#ff7597"/>
+              <path d="M-22 0 C-26 -28 -12 -46 0 -54 C2 -34 -2 -12 6 6 C-4 8 -14 6 -22 0 Z" fill="#ff9eb5"/>
+              <path d="M22 0 C26 -28 12 -46 0 -54 C-2 -34 2 -12 -6 6 C4 8 14 6 22 0 Z" fill="#ff527b"/>
+            </g>
+
+            <!-- Flower 4: Cream White Tulip -->
+            <g transform="translate(165, 175) rotate(-10) scale(1.1)">
+              <path d="M-20 0 C-26 -30 -14 -46 -9 -60 C-3 -48 0 -44 0 -38 C0 -44 3 -48 9 -60 C14 -46 26 -30 20 0 Z" fill="#fff2f6"/>
+              <path d="M-20 0 C-24 -26 -11 -42 0 -50 C2 -30 -2 -10 6 6 Z" fill="#ffffff"/>
+              <path d="M20 0 C24 -26 11 -42 0 -50 C-2 -30 2 -10 -6 6 Z" fill="#ffccd9"/>
+            </g>
+
+            <!-- Flower 5: Coral Rose -->
+            <g transform="translate(235, 175) rotate(10) scale(1.1)">
+              <circle cx="0" cy="0" r="20" fill="#ff6b8b"/>
+              <path d="M-12 -5 C-8 -15 8 -15 12 -5 C15 5 8 12 0 14 C-8 12 -15 5 -12 -5 Z" fill="#f0436b"/>
+            </g>
+
+            <!-- Flower 6: Front Center Big Velvet Rose -->
+            <g transform="translate(200, 230) scale(1.4)" filter="drop-shadow(0 6px 14px rgba(255,45,96,0.35))">
+              <circle cx="0" cy="0" r="22" fill="#ff2d60"/>
+              <path d="M-15 -7 C-10 -20 10 -20 15 -7 C18 7 10 16 0 18 C-10 16 -18 7 -15 -7 Z" fill="#d91a4c"/>
+              <path d="M-8 -3 C-4 -12 4 -12 8 -3 C10 4 5 10 0 11 C-5 10 -10 4 -8 -3 Z" fill="#ffffff" opacity="0.35"/>
+            </g>
+
+            <!-- Baby's breath little white flower clusters -->
+            <g opacity="0.95">
+              <circle cx="100" cy="110" r="4" fill="#ffffff"/>
+              <circle cx="94" cy="118" r="3.5" fill="#ffffff"/>
+              <circle cx="106" cy="118" r="3.5" fill="#ffffff"/>
+              <circle cx="100" cy="115" r="2" fill="#ffd166"/>
+
+              <circle cx="300" cy="110" r="4" fill="#ffffff"/>
+              <circle cx="294" cy="118" r="3.5" fill="#ffffff"/>
+              <circle cx="306" cy="118" r="3.5" fill="#ffffff"/>
+              <circle cx="300" cy="115" r="2" fill="#ffd166"/>
+
+              <circle cx="125" cy="200" r="4" fill="#ffffff"/>
+              <circle cx="135" cy="195" r="3.5" fill="#ffffff"/>
+              <circle cx="130" cy="198" r="2" fill="#ffd166"/>
+
+              <circle cx="275" cy="200" r="4" fill="#ffffff"/>
+              <circle cx="265" cy="195" r="3.5" fill="#ffffff"/>
+              <circle cx="270" cy="198" r="2" fill="#ffd166"/>
+            </g>
+
+            <!-- Giant Cute Red Silk Ribbon Bow -->
+            <g transform="translate(200, 360)">
+              <rect x="-55" y="-14" width="110" height="26" rx="6" fill="#ff2d60"/>
+              <!-- Bow Loops -->
+              <ellipse cx="-45" cy="-2" rx="28" ry="18" fill="#ff4d79" transform="rotate(-15 -45 -2)"/>
+              <ellipse cx="45" cy="-2" rx="28" ry="18" fill="#ff4d79" transform="rotate(15 45 -2)"/>
+              <!-- Knot -->
+              <circle cx="0" cy="0" r="14" fill="#d91a4c"/>
+              <circle cx="0" cy="0" r="7" fill="#ffd166"/>
+              <!-- Bow Tails -->
+              <path d="M-10 10 Q-35 55 -50 90 Q-25 70 -6 20 Z" fill="#ff2d60"/>
+              <path d="M10 10 Q35 55 50 90 Q25 70 6 20 Z" fill="#ff2d60"/>
+            </g>
+
+            <!-- Chibi Cat Paws Wrapping around Bouquet -->
+            <ellipse cx="108" cy="355" rx="18" ry="14" fill="#ffffff" stroke="#ff8ca3" stroke-width="3" transform="rotate(20 108 355)"/>
+            <ellipse cx="292" cy="355" rx="18" ry="14" fill="#ffffff" stroke="#ff8ca3" stroke-width="3" transform="rotate(-20 292 355)"/>
+
+          </g>
+        </svg>
+      </div>
+
+      <!-- Tap to open gift hint -->
+      <div class="tap-gift-pill" id="tap-gift-btn">
+        <span>🌷</span> Chạm vào bó hoa để nhận quà 20/10 nè! ✨
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SCENE 3: LOVE LETTER MODAL
+       ======================================================== -->
+  <section class="scene off modal-backdrop" id="scene-modal" role="dialog" aria-modal="true">
+    <div class="letter-envelope" id="letter-envelope">
+      
+      <div class="letter-badge-row">
+        <span class="letter-tag">🎀 Happy 20/10 My Princess 🎀</span>
+      </div>
+
+      <h1 class="letter-title" id="letter-title">Gửi em, cô gái bé nhỏ của anh! 💖</h1>
+
+      <!-- Typewriter Letter Content -->
+      <p class="letter-content" id="letter-msg"></p>
+
+      <!-- Polaroid Memory Box -->
+      <div class="memories-box">
+        <div class="memories-heading">🐾 Khoảnh Khắc Ngọt Ngào Bên Em 🐾</div>
+        <div class="polaroids-scroll">
+          
+          <!-- Polaroid 1 -->
+          <div class="polaroid-card" style="--rot: -3deg">
+            <div class="polaroid-pic-frame">
+              <!-- Mochi Cat Couple sharing Boba Milk Tea SVG -->
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="46" fill="#ffeaf0"/>
+                <!-- Cat 1 White -->
+                <ellipse cx="32" cy="62" rx="16" ry="14" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+                <polygon points="20,52 26,38 34,48" fill="#fff" stroke="#ff8ca3" stroke-width="1.8"/>
+                <polygon points="34,48 42,38 46,52" fill="#fff" stroke="#ff8ca3" stroke-width="1.8"/>
+                <!-- Cat 2 Peach -->
+                <ellipse cx="68" cy="62" rx="16" ry="14" fill="#ffd4be" stroke="#ff9f7d" stroke-width="2"/>
+                <polygon points="56,52 60,38 68,48" fill="#ffd4be" stroke="#ff9f7d" stroke-width="1.8"/>
+                <polygon points="68,48 76,38 82,52" fill="#ffd4be" stroke="#ff9f7d" stroke-width="1.8"/>
+                <!-- Eyes & blush -->
+                <circle cx="28" cy="60" r="2" fill="#333"/>
+                <circle cx="36" cy="60" r="2" fill="#333"/>
+                <circle cx="64" cy="60" r="2" fill="#333"/>
+                <circle cx="72" cy="60" r="2" fill="#333"/>
+                <!-- Boba Milk Tea in middle -->
+                <rect x="44" y="58" width="12" height="18" rx="2" fill="#fff" stroke="#333" stroke-width="1.5"/>
+                <line x1="50" y1="52" x2="50" y2="60" stroke="#ff4d79" stroke-width="2"/>
+                <!-- Heart above -->
+                <path d="M50 34 Q46 26 40 30 Q34 36 50 48 Q66 36 60 30 Q54 26 50 34 Z" fill="#ff4d79"/>
+              </svg>
+            </div>
+            <div class="polaroid-label">Uống trà sữa cùng em 🧋</div>
+          </div>
+
+          <!-- Polaroid 2 -->
+          <div class="polaroid-card" style="--rot: 2.5deg">
+            <div class="polaroid-pic-frame">
+              <!-- Mochi Cat Head Pat SVG -->
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="46" fill="#fff8e7"/>
+                <!-- Cat Cuddle -->
+                <ellipse cx="45" cy="58" rx="22" ry="18" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+                <polygon points="28,44 36,30 46,42" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+                <polygon points="46,42 56,30 62,44" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+                <!-- Happy closed eyes ^ ^ -->
+                <path d="M36 56 Q40 52 44 56" stroke="#333" stroke-width="2" fill="none"/>
+                <path d="M52 56 Q56 52 60 56" stroke="#333" stroke-width="2" fill="none"/>
+                <ellipse cx="32" cy="60" rx="5" ry="3" fill="#ff8aa6"/>
+                <ellipse cx="64" cy="60" rx="5" ry="3" fill="#ff8aa6"/>
+                <!-- Big Love Heart -->
+                <path d="M72 32 Q68 22 60 26 Q52 34 72 48 Q92 34 84 26 Q76 22 72 32 Z" fill="#ff2d60"/>
+              </svg>
+            </div>
+            <div class="polaroid-label">Xoa đầu bé cưng 🌸</div>
+          </div>
+
+          <!-- Polaroid 3 -->
+          <div class="polaroid-card" style="--rot: -2deg">
+            <div class="polaroid-pic-frame">
+              <!-- Giant Gift Box & Kittens SVG -->
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="46" fill="#f0fff4"/>
+                <!-- Gift Box -->
+                <rect x="28" y="48" width="44" height="34" rx="4" fill="#ff7597"/>
+                <rect x="24" y="40" width="52" height="10" rx="3" fill="#ff4d79"/>
+                <rect x="46" y="40" width="8" height="42" fill="#ffd166"/>
+                <!-- Ribbon bow -->
+                <ellipse cx="43" cy="34" rx="7" ry="5" fill="#ffd166"/>
+                <ellipse cx="57" cy="34" rx="7" ry="5" fill="#ffd166"/>
+                <circle cx="50" cy="35" r="3" fill="#e0a800"/>
+                <!-- Sparkles -->
+                <circle cx="25" cy="30" r="3" fill="#ffd166"/>
+                <circle cx="75" cy="28" r="3.5" fill="#ff4d79"/>
+              </svg>
+            </div>
+            <div class="polaroid-label">Bình yên bên em 🎁</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Cute Response Buttons for Girl -->
+      <div class="reply-area">
+        <div class="reply-area-title">💌 Nhắn lại cho anh nè:</div>
+        <div class="reply-buttons-grid">
+          <button class="cute-reply-btn" data-reply="Dạ em yêu anh nhiều lắm 🥰 Yêu anh nhất trên đời!">Dạ em yêu anh nhiều lắm 🥰</button>
+          <button class="cute-reply-btn" data-reply="Bắt đền anh dẫn đi ăn kem với trà sữa nha! 🧋🍦">Bắt đền anh dẫn đi trà sữa 🧋</button>
+          <button class="cute-reply-btn" data-reply="Thưởng cho anh một cái ôm thật to nè! 🤗❤️">Thưởng cho anh một cái ôm nè 🤗</button>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button class="btn-chibi-close" id="modal-close-btn">Ngắm Lại Bé Mèo & Hoa 🌷</button>
+
+    </div>
+  </section>
+
+  <!-- Sweet Toast Notification -->
+  <div class="kawaii-toast" id="kawaii-toast">
+    <span>💖</span> <span id="toast-text">Lời nhắn đã gửi đến anh rồi nhé!</span>
+  </div>
+
+  <!-- Customizer Modal -->
+  <div class="customizer-modal" id="customizer-modal">
+    <div class="customizer-card">
+      <h3>⚙️ Tùy Chỉnh Quà 20/10 & Tạo Link</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 14px;">
+        Chỉnh sửa lời chúc, tên bạn gái và mật mã rồi bấm <b>"Sao chép link"</b> để gửi cho cô ấy nhé!
+      </p>
+
+      <div class="input-group">
+        <label>Tên / Danh xưng của bạn gái:</label>
+        <input type="text" id="cust-name" value="cô gái bé nhỏ của anh">
+      </div>
+
+      <div class="input-group">
+        <label>Mật khẩu 4 số (Mặc định: 2010):</label>
+        <input type="text" id="cust-pass" maxlength="4" value="2010">
+      </div>
+
+      <div class="input-group">
+        <label>Tiêu đề bức thư:</label>
+        <input type="text" id="cust-title" value="Gửi em, cô gái bé nhỏ của anh! 💖">
+      </div>
+
+      <div class="input-group">
+        <label>Lời chúc của bạn gửi bạn gái:</label>
+        <textarea id="cust-msg" rows="5"></textarea>
+      </div>
+
+      <div style="display: flex; gap: 8px; margin-top: 14px;">
+        <button class="btn-chibi-close" id="cust-save-btn" style="flex: 1;">Áp Dụng Ngay</button>
+        <button class="btn-chibi-close" id="cust-copy-link-btn" style="flex: 1; background: linear-gradient(135deg, #10b981, #059669);">
+          📋 Copy Link Gửi Em
+        </button>
+      </div>
+
+      <div class="share-link-box" id="cust-link-preview" style="display: none;"></div>
+
+      <button id="cust-close-btn" style="width: 100%; margin-top: 10px; background: none; border: none; color: var(--text-muted); cursor: pointer; padding: 6px; font-weight: 700;">
+        Đóng lại
+      </button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    /* ========================================================
+       CONFIG & URL PARAMETER PARSER
+       ======================================================== */
+    const params = new URLSearchParams(window.location.search);
+
+    let PASS = params.get('pass') || '2010';
+    let TITLE = params.get('title') || 'Gửi em, cô gái bé nhỏ của anh! 💖';
+    let DEFAULT_MSG = 
+`Chúc công chúa 20/10 thật hạnh phúc, luôn xinh đẹp và rạng rỡ nụ cười trên môi nhé! 🌸
+
+Mong rằng mỗi ngày trôi qua em đều cảm nhận được sự yêu thương và trân trọng từ anh. Dù ngoài kia có nhiều sóng gió thế nào, anh vẫn sẽ luôn ở đây, sẵn sàng che chở và nắm chặt tay em bước qua tất cả.
+
+Cảm ơn em vì đã xuất hiện và làm cho cuộc sống của anh trở nên ngọt ngào đến vậy. Yêu em thật nhiều! 💕`;
+
+    let MSG = params.get('msg') || DEFAULT_MSG;
+    let TO_NAME = params.get('to');
+    if (TO_NAME) {
+      TITLE = `Gửi ${TO_NAME}, tình yêu của anh! 💖`;
+    }
+
+    const $ = id => document.getElementById(id);
+    const rnd = (min, max) => min + Math.random() * (max - min);
+
+    $('cust-pass').value = PASS;
+    $('cust-title').value = TITLE;
+    $('cust-msg').value = MSG;
+    if (TO_NAME) $('cust-name').value = TO_NAME;
+
+    /* ========================================================
+       CANVAS BACKGROUND: PASTEL BUBBLES, HEARTS & PETALS
+       ======================================================== */
+    const canvas = $('fx-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    function resizeCanvas() {
+      W = window.innerWidth;
+      H = window.innerHeight;
+      canvas.width = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Floating particles (bubbles & sparkles)
+    const floaters = Array.from({ length: 36 }, () => ({
+      x: rnd(0, W),
+      y: rnd(0, H),
+      r: rnd(3, 8),
+      vx: rnd(-0.25, 0.25),
+      vy: -rnd(0.3, 0.75),
+      alpha: rnd(0.25, 0.65),
+      isHeart: Math.random() < 0.4
+    }));
+
+    let burstParticles = [];
+    let mouseSparkles = [];
+
+    function burstHearts(count = 55, originX = W / 2, originY = H / 2) {
+      const colors = ['#ff5e84', '#ff8ca3', '#ffd166', '#ffb3c6', '#ffffff', '#ff9aa2'];
+      for (let i = 0; i < count; i++) {
+        const ang = rnd(0, Math.PI * 2);
+        const spd = rnd(2.5, 7.5);
+        burstParticles.push({
+          x: originX + rnd(-15, 15),
+          y: originY + rnd(-15, 15),
+          vx: Math.cos(ang) * spd,
+          vy: Math.sin(ang) * spd - rnd(1.5, 4.5),
+          r: rnd(6, 12),
+          rot: rnd(0, 6),
+          vrot: rnd(-0.15, 0.15),
+          life: 1,
+          decay: rnd(0.008, 0.015),
+          color: colors[Math.floor(Math.random() * colors.length)],
+          isHeart: Math.random() < 0.6
+        });
+      }
+    }
+
+    window.addEventListener('pointermove', e => {
+      if (Math.random() < 0.35) {
+        mouseSparkles.push({
+          x: e.clientX,
+          y: e.clientY,
+          r: rnd(2.5, 5),
+          vx: rnd(-0.8, 0.8),
+          vy: rnd(-1.2, -0.2),
+          life: 1,
+          color: Math.random() < 0.6 ? '#ff5e84' : '#ffd166'
+        });
+      }
+    });
+
+    function drawHeart(x, y, size, color, alpha) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.globalAlpha = Math.max(alpha, 0);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      const topH = size * 0.3;
+      ctx.moveTo(0, topH);
+      ctx.bezierCurveTo(0, 0, -size / 2, 0, -size / 2, topH);
+      ctx.bezierCurveTo(-size / 2, (size + topH) / 2, 0, size * 0.8, 0, size);
+      ctx.bezierCurveTo(0, size * 0.8, size / 2, (size + topH) / 2, size / 2, topH);
+      ctx.bezierCurveTo(size / 2, 0, 0, 0, 0, topH);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function renderLoop() {
+      ctx.clearRect(0, 0, W, H);
+
+      // 1. Ambient floating bubbles & hearts
+      for (const f of floaters) {
+        f.x += f.vx;
+        f.y += f.vy;
+        if (f.y < -20) { f.y = H + 20; f.x = rnd(0, W); }
+        if (f.x < -20) f.x = W + 20;
+        if (f.x > W + 20) f.x = -20;
+
+        if (f.isHeart) {
+          drawHeart(f.x, f.y, f.r * 1.6, '#ff8ca3', f.alpha);
+        } else {
+          ctx.save();
+          ctx.globalAlpha = f.alpha;
+          ctx.fillStyle = 'rgba(255, 140, 163, 0.4)';
+          ctx.beginPath();
+          ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      // 2. Mouse sparkles
+      mouseSparkles = mouseSparkles.filter(s => s.life > 0);
+      for (const s of mouseSparkles) {
+        s.x += s.vx;
+        s.y += s.vy;
+        s.life -= 0.03;
+        ctx.save();
+        ctx.globalAlpha = Math.max(s.life, 0);
+        ctx.fillStyle = s.color;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // 3. Burst particles
+      burstParticles = burstParticles.filter(p => p.life > 0);
+      for (const p of burstParticles) {
+        p.vy += 0.07;
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vx *= 0.985;
+        p.rot += p.vrot;
+        p.life -= p.decay;
+
+        if (p.isHeart) {
+          drawHeart(p.x, p.y, p.r * 1.5, p.color, p.life);
+        } else {
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.globalAlpha = Math.max(p.life, 0);
+          ctx.fillStyle = p.color;
+          ctx.beginPath();
+          ctx.ellipse(0, 0, p.r, p.r * 0.6, 0, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      requestAnimationFrame(renderLoop);
+    }
+    renderLoop();
+
+    /* ========================================================
+       SWEET MUSIC SYNTHESIZER (WEB AUDIO API)
+       ======================================================== */
+    let audioCtx = null;
+    let isPlaying = false;
+    let musicTimer = null;
+    let musicIndex = 0;
+
+    // Cheerful, sweet romantic melody
+    const melody = [
+      659.25, 739.99, 880.00, 739.99, 659.25, 587.33, 523.25, 587.33,
+      659.25, 739.99, 659.25, 587.33, 523.25, 440.00, 523.25, 587.33,
+      739.99, 880.00, 987.77, 880.00, 739.99, 659.25, 587.33, 659.25,
+      739.99, 880.00, 739.99, 659.25, 587.33, 493.88, 587.33, 659.25
+    ];
+    const bass = [
+      293.66, 293.66, 220.00, 220.00, 246.94, 246.94, 185.00, 185.00,
+      196.00, 196.00, 293.66, 293.66, 196.00, 196.00, 220.00, 220.00
+    ];
+
+    function initAudio() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+    }
+
+    function playNote(freq, time, volume = 0.12, dur = 1.2) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const osc2 = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, time);
+
+      osc2.type = 'triangle';
+      osc2.frequency.setValueAtTime(freq * 2, time);
+
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.linearRampToValueAtTime(volume, time + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + dur);
+
+      osc.connect(gain);
+      osc2.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(time);
+      osc2.start(time);
+      osc.stop(time + dur + 0.05);
+      osc2.stop(time + dur + 0.05);
+    }
+
+    const scale = [523.25, 587.33, 659.25, 698.46, 783.99, 880.00, 987.77, 1046.50, 1174.66, 1318.51];
+    function playKeySound(k) {
+      try {
+        initAudio();
+        const num = parseInt(k, 10);
+        const f = !isNaN(num) ? scale[num % scale.length] : 440;
+        playNote(f, audioCtx.currentTime, 0.14, 0.45);
+        if (navigator.vibrate) navigator.vibrate(22);
+      } catch (e) {}
+    }
+
+    function playVictoryChime() {
+      try {
+        initAudio();
+        const t = audioCtx.currentTime;
+        [523.25, 659.25, 783.99, 1046.50, 1318.51, 1567.98].forEach((f, i) => {
+          playNote(f, t + i * 0.08, 0.16, 1.5);
+        });
+      } catch (e) {}
+    }
+
+    function musicStep() {
+      if (!audioCtx || !isPlaying) return;
+      const t = audioCtx.currentTime + 0.02;
+      const f = melody[musicIndex % melody.length];
+      playNote(f, t, 0.11, 1.3);
+      playNote(f * 2, t, 0.03, 0.6);
+
+      if (musicIndex % 2 === 0) {
+        const b = bass[(musicIndex / 2) % bass.length];
+        playNote(b, t, 0.08, 1.6);
+      }
+      musicIndex++;
+    }
+
+    function toggleMusic(force = null) {
+      initAudio();
+      isPlaying = force !== null ? force : !isPlaying;
+
+      const pill = $('music-pill');
+      const text = $('music-text');
+
+      if (isPlaying) {
+        pill.classList.add('playing');
+        text.textContent = 'Đang Phát Nhạc 🎵';
+        clearInterval(musicTimer);
+        musicStep();
+        musicTimer = setInterval(musicStep, 430);
+      } else {
+        pill.classList.remove('playing');
+        text.textContent = 'Bật Nhạc 20/10 🎵';
+        clearInterval(musicTimer);
+      }
+    }
+    $('music-pill').onclick = () => toggleMusic();
+
+    /* ========================================================
+       KEYPAD & LOCK LOGIC
+       ======================================================== */
+    let passBuffer = "";
+    const pawDots = [...$('paw-dots').children];
+
+    const keyLayout = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "x"];
+    const keypadContainer = $('squishy-keypad');
+
+    keyLayout.forEach(k => {
+      const btn = document.createElement('button');
+      if (k === "") {
+        btn.className = "squishy-btn gap";
+        btn.disabled = true;
+      } else {
+        btn.className = "squishy-btn" + (k === "x" ? " del" : "");
+        btn.textContent = k === "x" ? "⌫" : k;
+        btn.setAttribute('aria-label', k === "x" ? "Xóa" : `Số ${k}`);
+        btn.onclick = () => handleKeyPress(k);
+      }
+      keypadContainer.appendChild(btn);
+    });
+
+    function updatePaws() {
+      pawDots.forEach((dot, index) => {
+        dot.classList.toggle('active', index < passBuffer.length);
+      });
+    }
+
+    function handleKeyPress(k) {
+      playKeySound(k);
+
+      // Cute head wiggle on each number press
+      const peeker = $('chibi-peeker');
+      peeker.style.transform = `scale(1.12) rotate(${rnd(-8, 8)}deg)`;
+      setTimeout(() => peeker.style.transform = '', 180);
+
+      if (k === "x") {
+        passBuffer = passBuffer.slice(0, -1);
+      } else if (passBuffer.length < 4) {
+        passBuffer += k;
+      }
+      updatePaws();
+
+      if (passBuffer.length === 4) {
+        setTimeout(verifyPass, 220);
+      }
+    }
+
+    function verifyPass() {
+      if (passBuffer === PASS) {
+        // Correct Password -> Victory Celebration!
+        playVictoryChime();
+        toggleMusic(true);
+        burstHearts(80, W / 2, H / 2);
+
+        $('scene-lock').classList.add('off');
+        $('scene-stage').classList.remove('off');
+        setTimeout(() => burstHearts(60, W / 2, H / 2 - 40), 450);
+      } else {
+        // Wrong -> Shake & cute reset
+        const card = $('chibi-lock-card');
+        card.classList.add('shake-card');
+        setTimeout(() => {
+          card.classList.remove('shake-card');
+          passBuffer = "";
+          updatePaws();
+        }, 500);
+      }
+    }
+
+    window.addEventListener('keydown', e => {
+      if (!$('scene-lock').classList.contains('off')) {
+        if (/^[0-9]$/.test(e.key)) handleKeyPress(e.key);
+        else if (e.key === "Backspace") handleKeyPress("x");
+      }
+    });
+
+    /* ========================================================
+       CHIBI HERO STAGE INTERACTION
+       ======================================================== */
+    const speeches = [
+      "Anh mang hoa đến tặng bé 20/10 nè! Chạm vào bó hoa nhé! 🌷",
+      "Bé có biết hôm nay là ngày gì hơm? Ngày của công chúa đó! 👑",
+      "Bó hoa này to gần bằng anh luôn á, tặng riêng cho bé đó! 🥰",
+      "Chúc bé luôn xinh đẹp, vui vẻ và yêu anh nhiều hơn nha! 💖",
+      "Chạm vào bó hoa để mở bức thư bí mật của anh nè! 💌"
+    ];
+    let speechIdx = 0;
+
+    function cycleSpeech() {
+      speechIdx = (speechIdx + 1) % speeches.length;
+      $('speech-text').textContent = speeches[speechIdx];
+      burstHearts(25, W / 2, H / 2 - 100);
+      playKeySound('7');
+    }
+    $('chibi-speech').onclick = cycleSpeech;
+
+    // Petting Chibi Hero
+    $('chibi-hero').onclick = () => {
+      burstHearts(45, W / 2, H / 2 - 50);
+      openLoveLetter();
+    };
+    $('tap-gift-btn').onclick = openLoveLetter;
+
+    /* ========================================================
+       OPEN LOVE LETTER MODAL
+       ======================================================== */
+    let typeTimer = null;
+
+    function openLoveLetter() {
+      playVictoryChime();
+      burstHearts(75, W / 2, H / 2);
+
+      $('letter-title').textContent = TITLE;
+      const msgBox = $('letter-msg');
+      msgBox.textContent = "";
+      msgBox.classList.add('typing-paw');
+
+      $('scene-modal').classList.remove('off');
+
+      let charIdx = 0;
+      clearInterval(typeTimer);
+      typeTimer = setInterval(() => {
+        msgBox.textContent = MSG.slice(0, ++charIdx);
+        if (charIdx >= MSG.length) {
+          clearInterval(typeTimer);
+          msgBox.classList.remove('typing-paw');
+        }
+      }, 35);
+    }
+
+    let partyDancing = false;
+    $('modal-close-btn').onclick = () => {
+      clearInterval(typeTimer);
+      $('scene-modal').classList.add('off');
+
+      if (!partyDancing) {
+        partyDancing = true;
+        $('chibi-hero').classList.add('party-active');
+        spawnKawaiiSticker();
+        setInterval(spawnKawaiiSticker, 1100);
+      }
+    };
+
+    /* ========================================================
+       FLOATING KAWAII STICKERS
+       ======================================================== */
+    const STICKER_SVGS = [
+      // Mochi Cat with Heart
+      `<svg viewBox="0 0 60 60">
+        <ellipse cx="30" cy="34" rx="20" ry="17" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+        <polygon points="16,24 22,12 28,22" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+        <polygon points="32,22 38,12 44,24" fill="#fff" stroke="#ff8ca3" stroke-width="2"/>
+        <circle cx="24" cy="32" r="2" fill="#333"/>
+        <circle cx="36" cy="32" r="2" fill="#333"/>
+        <ellipse cx="18" cy="36" rx="3.5" ry="2" fill="#ff8aa6"/>
+        <ellipse cx="42" cy="36" rx="3.5" ry="2" fill="#ff8aa6"/>
+        <path d="M30 40 Q26 34 22 38 Q18 42 30 50 Q42 42 38 38 Q34 34 30 40 Z" fill="#ff2d60"/>
+      </svg>`,
+      // Cute Strawberry
+      `<svg viewBox="0 0 60 60">
+        <path d="M30 16 C16 16 12 30 16 46 C20 54 30 56 30 56 C30 56 40 54 44 46 C48 30 44 16 30 16 Z" fill="#ff4d79"/>
+        <polygon points="30,12 26,18 34,18" fill="#52a35b"/>
+        <polygon points="24,14 20,20 28,18" fill="#52a35b"/>
+        <polygon points="36,14 40,20 32,18" fill="#52a35b"/>
+        <circle cx="24" cy="28" r="1.5" fill="#fff"/>
+        <circle cx="36" cy="30" r="1.5" fill="#fff"/>
+        <circle cx="30" cy="38" r="1.5" fill="#fff"/>
+        <circle cx="26" cy="46" r="1.5" fill="#fff"/>
+        <circle cx="34" cy="46" r="1.5" fill="#fff"/>
+      </svg>`,
+      // Red Tulip
+      `<svg viewBox="0 0 60 60">
+        <path d="M22 18 C16 30 20 42 30 46 C40 42 44 30 38 18 C34 26 26 26 22 18 Z" fill="#ff4d79"/>
+        <line x1="30" y1="46" x2="30" y2="58" stroke="#52a35b" stroke-width="3"/>
+      </svg>`
+    ];
+
+    function spawnKawaiiSticker() {
+      if (document.hidden || !$('scene-modal').classList.contains('off')) return;
+
+      const el = document.createElement('div');
+      el.className = 'kawaii-floating-sticker';
+      el.innerHTML = STICKER_SVGS[Math.floor(Math.random() * STICKER_SVGS.length)];
+
+      const isLeft = Math.random() < 0.5;
+      const xPos = isLeft ? rnd(0.04, 0.26) * W : rnd(0.70, 0.90) * W;
+      const yPos = rnd(0.12, 0.78) * H;
+
+      el.style.left = `${xPos}px`;
+      el.style.top = `${yPos}px`;
+      el.style.setProperty('--r0', `${rnd(-20, 20)}deg`);
+      el.style.setProperty('--r1', `${rnd(-12, 12)}deg`);
+
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 4200);
+    }
+
+    /* ========================================================
+       GIRL REACTION BUTTONS
+       ======================================================== */
+    const toast = $('kawaii-toast');
+    const toastText = $('toast-text');
+    let toastTimer = null;
+
+    function showToast(msg) {
+      toastText.textContent = msg;
+      toast.classList.add('show');
+      burstHearts(65, W / 2, 70);
+      playVictoryChime();
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    document.querySelectorAll('.cute-reply-btn').forEach(btn => {
+      btn.onclick = () => {
+        showToast(btn.getAttribute('data-reply'));
+      };
+    });
+
+    /* ========================================================
+       THEME TOGGLE
+       ======================================================== */
+    let isNight = false;
+    $('theme-toggle').onclick = () => {
+      isNight = !isNight;
+      document.documentElement.setAttribute('data-theme', isNight ? 'night' : 'light');
+      $('theme-toggle').textContent = isNight ? '☀️' : '🌙';
+    };
+
+    /* ========================================================
+       CUSTOMIZER & LINK COPIER
+       ======================================================== */
+    const custModal = $('customizer-modal');
+    $('customizer-trigger').onclick = () => custModal.classList.add('show');
+    $('cust-close-btn').onclick = () => custModal.classList.remove('show');
+
+    $('cust-save-btn').onclick = () => {
+      PASS = $('cust-pass').value.trim() || '2010';
+      TITLE = $('cust-title').value.trim() || 'Gửi em, cô gái bé nhỏ của anh! 💖';
+      MSG = $('cust-msg').value.trim() || DEFAULT_MSG;
+      custModal.classList.remove('show');
+      showToast('Đã lưu tùy chỉnh thành công! 💖');
+    };
+
+    $('cust-copy-link-btn').onclick = () => {
+      const passVal = $('cust-pass').value.trim() || '2010';
+      const titleVal = $('cust-title').value.trim();
+      const msgVal = $('cust-msg').value.trim();
+      const nameVal = $('cust-name').value.trim();
+
+      let base = window.location.href.split('?')[0];
+      if (base.includes('localhost') || base.includes('127.0.0.1') || base.startsWith('file:')) {
+        base = 'https://qua-2010-tang-em.surge.sh/';
+      }
+      const url = new URL(base);
+      if (passVal !== '2010') url.searchParams.set('pass', passVal);
+      if (nameVal && nameVal !== 'cô gái bé nhỏ của anh') url.searchParams.set('to', nameVal);
+      if (titleVal && titleVal !== 'Gửi em, cô gái bé nhỏ của anh! 💖') url.searchParams.set('title', titleVal);
+      if (msgVal && msgVal !== DEFAULT_MSG) url.searchParams.set('msg', msgVal);
+
+      const finalLink = url.toString();
+      $('cust-link-preview').style.display = 'block';
+      $('cust-link-preview').textContent = finalLink;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(finalLink).then(() => {
+          showToast('Đã copy link quà tặng thành công! 🎉');
+        });
+      } else {
+        showToast('Link quà tặng đã được tạo bên dưới nhé!');
+      }
+    };
+  </script>
+</body>
+</html>
